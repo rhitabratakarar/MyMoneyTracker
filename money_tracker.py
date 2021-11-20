@@ -40,13 +40,20 @@ def login():
 
         # check for the validity of the form data from database.
         connection = sqlite3.connect("database.db")
-        query = ""
+        query = f"select email, password from {AUTH} where email='{email}'"
         cursor = connection.cursor()
 
-        if query != "":
-            cursor.execute(query)
-
+        cursor.execute(query)
+        fetched_data = cursor.fetchone()
         connection.close()
+
+        # unpack the tuple
+        e, p = fetched_data
+
+        if e == email and p == password:
+            return "You are logged in."
+        else:
+            return "Email and Password combination do not match!"
 
     else:
         return render_template("login.html")
