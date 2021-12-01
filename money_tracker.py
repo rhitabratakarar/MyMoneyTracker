@@ -137,7 +137,9 @@ def withdraw():
         amount = request.form.get("amount")
         reason = request.form.get("reason")
 
-        amount = str(-int(amount))
+        if int(amount) > 0:
+            amount = str(-int(amount))
+
         date = datetime.now()
 
         # connect to the database
@@ -181,7 +183,7 @@ def logs():
 
     connection.close()
 
-    return render_template("logs.html", username=session.get("username"), fetched_dates = fetched_dates, balance=balance)
+    return render_template("logs.html", username=session.get("username"), fetched_dates = fetched_dates, balance=balance[0])
 
 
 @app.route("/logout", methods=["POST", "GET"])
