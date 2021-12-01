@@ -12,10 +12,10 @@
 {% block body %}
 
   <div class="container">
-    <div class="form-div">
+    <div class="form-div" action="/login">
       <form method="POST">
-        <input id="form-email-field" placeholder="Email" type="email" name="email"></br>
-        <input id="form-password-field" placeholder="Password" type="password" name="password"></br>
+        <input id="form-username-field" placeholder="Username" type="text" name="username" required></br>
+        <input id="form-password-field" placeholder="Password" type="password" name="password" required></br>
         <input value="Login" type="submit" id="form-login-button">
       </form>
       <a href="/signup">Not a user? Click here.</a>

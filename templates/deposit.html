@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+  <title>Deposit</title>
+  <meta charset='utf-8'>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/deposit.css')}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{%endblock%}
+
+{% block body %}
+
+  <div class="container">
+    <fieldset>
+
+      <legend><h3>Deposit</h3></legend>
+
+      <form action="/deposit" method="POST">
+
+        Amount: <input type="number" name="amount"></br>
+        Reason: &nbsp;<input type="text" name="reason"> </br>
+        <input type="submit" value="Deposit">
+
+      </form>
+
+    </fieldset>
+
+  </div>
+
+{% endblock %}

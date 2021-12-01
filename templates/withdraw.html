@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+  <title>Withdraw</title>
+  <meta charset='utf-8'>
+  <link rel="stylesheet" href="{{url_for('static', filename='css/withdraw.css')}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{%endblock%}
+
+{% block body %}
+
+  <div class="container">
+    <fieldset>
+
+      <legend><h3>Withdraw</h3></legend>
+
+      <form action="/withdraw" method="POST">
+
+        Amount: <input type="number" name="amount"></br>
+        Reason: &nbsp;<input type="text" name="reason"> </br>
+        <input type="submit" value="Withdraw">
+
+      </form>
+
+    </fieldset>
+
+  </div>
+
+{% endblock %}
+

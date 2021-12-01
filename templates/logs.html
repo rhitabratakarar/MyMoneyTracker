@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+<title>Logs :: {{username}}</title>
+  <meta charset="utf-8">
+
+  <link rel="stylesheet" href={{ url_for('static', filename='css/logs.css')}}>
+{% endblock %}
+
+{% block body %}
+
+  <div class="container">
+
+    <div id="navigation">
+      <a href="/deposit">Deposit</a>
+      <a href="/withdraw">Withdraw</a>
+      <a href="/logout">Logout</a>
+    </div>
+
+    <h2>Balance: {{balance}}</h2>
+
+    <div id="logs">
+
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,28 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+#navigation {
+  display: flex;
+  height: 40px;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: #181818;
+  position: fixed;
+  width: 100vw;
+}
+
+#navigation a {
+  text-align: center;
+  flex: 100px 1 1;
+  color: white;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+h2 {
+  position: relative;
+  top: 40px;
+}

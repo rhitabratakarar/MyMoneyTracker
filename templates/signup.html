@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block head %}
+
+  <title>Signup</title>
+  <meta charset="utf-8">
+  <link rel="stylesheet" href="{{url_for('static', filename='css/login.css')}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+{% endblock %}
+
+{% block body %}
+
+  <div class="container">
+    <div class="form-div">
+      <form method="POST" action="/signup">
+        <input id="form-username-field" placeholder="Username" type="text" name="username" required></br>
+        <input id="form-password-field" placeholder="Password" type="password" name="password" required></br>
+        <input value="Signup" type="submit" id="form-signup-button">
+      </form>
+      <a href="/login">Already a user? Click here.</a>
+    </div>
+  </div>
+
+{% endblock %}
