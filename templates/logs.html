@@ -20,9 +20,44 @@
 
     <h2>Balance: {{balance}}</h2>
 
-    <div id="logs">
+    <div class="logs flexcol">
+
+      <div class="tags flexrow">
+
+        <div>ID</div>
+        <div>Amount</div>
+        <div>Reason</div>
+        <div>Timestamp</div>
+
+      </div>
+
+      <div class="messages flexcol">
+
+        {% for log in logs %}
+
+          {% set id = log[0] %}
+          {% set amount = log[1] %}
+          {% set reason = log[2] %}
+          {% set timestamp = log[3] %}
+
+          <div class="flexrow wrappables log-cont">
+
+            <div class="log">{{loop.index}}</div>
+
+            <div class="log">{{amount}}</div>
+
+            <div class="log">{{reason}}</div>
+
+            <div class="log">{{timestamp}}</div>
+
+          </div>
+
+        {% endfor %}
+
+      </div>
 
     </div>
+
   </div>
 
 {% endblock %}

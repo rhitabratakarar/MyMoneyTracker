@@ -36,6 +36,9 @@ def login():
 
     if request.method == "POST":
 
+        if session.get('username'):
+            return redirect(url_for("logs"))
+
         # fetch posted form data.
         username = request.form.get("username")
         password = request.form.get("password")
@@ -174,7 +177,7 @@ def logs():
     cursor = connection.cursor()
 
     cursor.execute(query)
-    fetched_dates = cursor.fetchall()
+    logs = cursor.fetchall()
 
     balance_fetching_query = f"select sum(money) from {session.get('username')}"
 
@@ -183,7 +186,8 @@ def logs():
 
     connection.close()
 
-    return render_template("logs.html", username=session.get("username"), fetched_dates = fetched_dates, balance=balance[0])
+    # logs = 
+    return render_template("logs.html", username=session.get("username"), logs = logs, balance=balance[0])
 
 
 @app.route("/logout", methods=["POST", "GET"])

@@ -24,5 +24,54 @@
 
 h2 {
   position: relative;
-  top: 40px;
+  text-align: center;
+  top: 50px;
+}
+
+#navigation a:hover {
+  color: #66ff00;
+}
+
+.logs {
+  position: absolute;
+  top: 80px;
+  width: 100vw;
+  border: 1px solid green;
+  height: calc(100vh - 80px);
+}
+
+.flexrow {
+  display: flex;
+  flex-direction: row;
+}
+
+.flexcol {
+  display: flex;
+  flex-direction: column;
+}
+
+.tags > div{
+  flex: 100px 1 1;
+  text-align: center;
+  border: 1px solid red;
+}
+
+.messages {
+  overflow-y: scroll;
+  height: calc(100vh - 80px);
+}
+
+.log {
+  flex: 100px 1 1;
+  text-align: center;
+}
+
+.wrappables {
+  flex-wrap: wrap;
+}
+
+.log-cont {
+  flex-basis: 30px;
+  align-items: center;
+  border: 1px solid black;
 }
