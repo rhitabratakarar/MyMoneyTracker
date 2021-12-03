@@ -167,8 +167,6 @@ def logs():
     if not session.get("username"):
         return redirect(url_for("index"))
 
-    # connect to the database and retrieve last 20 days records
-
     connection = sqlite3.connect(f"{DATABASE}")
 
     query = f"""select * from {session.get('username')}
@@ -186,7 +184,6 @@ def logs():
 
     connection.close()
 
-    # logs = 
     return render_template("logs.html", username=session.get("username"), logs = logs, balance=balance[0])
 
 
